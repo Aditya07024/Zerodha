@@ -19,7 +19,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "https://zerodha-frontend-uizo.onrender.com", // frontend URL
+    origin: "http://localhost:3000", // frontend URL
     credentials: true,
   })
 );app.use(bodyParser.json());

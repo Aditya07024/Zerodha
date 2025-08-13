@@ -31,7 +31,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zerodha-backend-lpcf.onrender.com/login",
+        `${process.env.REACT_APP_API_URL}/login`,
         {
           ...inputValue,
         },
@@ -42,7 +42,8 @@ const Login = () => {
       if (success) {
         handleSuccess(message);
         setTimeout(() => {
-          window.location.href = "https://zerodha-dashboard-sosp.onrender.com";
+                    window.location.href = "https://zerodha-dashboard-sosp.onrender.com";
+
         }, 1000);
       } else {
         handleError(message);

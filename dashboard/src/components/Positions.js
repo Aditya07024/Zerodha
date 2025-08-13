@@ -9,13 +9,10 @@ const Positions = () => {
       console.log(res.data);
       setAllPositions(res.data.data);
     })
-    .catch((err) => {
-        console.error("Error fetching holdings:", err);
-      });
   },[]);
   return (
     <>
-      <h3 className="title">Positions (2)</h3>
+      <h3 className="title">Positions (allholdings.length)</h3>
 
       <div className="order-table">
         <table>
