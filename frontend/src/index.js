@@ -12,7 +12,6 @@ import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/Footer';
 import NotFound from './landing_page/NotFound';
 import Login from './landing_page/Login/Login';
-// import Dashboard from '../../dashboard/src/components/Dashboard';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -27,7 +26,6 @@ root.render(
     <Route path='/product' element={<ProductsPage/>}></Route>
     <Route path='/pricing' element={<PricingPage/>}></Route>
     <Route path='/support' element={<SupportPage/>}></Route>
-    {/* <Route path='/dashboard/*' element={<Dashboard/>}></Route> */}
 
     <Route path='*' element={<NotFound/>}></Route>
   </Routes>
