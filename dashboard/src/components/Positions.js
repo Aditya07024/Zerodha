@@ -5,10 +5,13 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:3002/allpositions").then((res)=>{
+    axios.get(`${process.env.REACT_APP_API_URL}/allpositions`).then((res)=>{
       console.log(res.data);
       setAllPositions(res.data.data);
     })
+    .catch((err) => {
+        console.error("Error fetching holdings:", err);
+      });
   },[]);
   return (
     <>
