@@ -16,13 +16,26 @@ const router = require("express").Router();
 const authRoute = require("./Routes/AuthRoute");
 const app = express();
 
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(",")
+  : [];
+
 // Middleware
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // frontend URL
+    origin: function(origin, callback) {
+      if (!origin) return callback(null, true); // allow curl, Postman
+      if (allowedOrigins.indexOf(origin) === -1) {
+        return callback(new Error("CORS policy does not allow this origin"), false);
+      }
+      return callback(null, true);
+    },
     credentials: true,
   })
-);app.use(bodyParser.json());
+);
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
