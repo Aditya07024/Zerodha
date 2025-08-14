@@ -59,37 +59,39 @@ const Login = () => {
   };
 
   return (
-    <div className="form_container mt-5 pt-5">
+  <>
+  <div className="form_container m-2 pt-5" style={{display: "flex",flexDirection: "column",alignItems: "center",}}>
       <h2 className="mt-5">Login Account</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" class="form-label">Email</label>
           <input
             type="email"
             name="email"
             value={email}
-            placeholder="Enter your email"
+            placeholder="Enter your email" class="form-control"
             onChange={handleOnChange}
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" class="form-label">Password</label>
           <input
             type="password"
             name="password"
-            value={password}
+            value={password} class="form-control"
             placeholder="Enter your password"
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className="btn btn-primary m-2">Submit</button>
         <span>
           Already have an account? <Link to={"/signup"}>Signup</Link>
         </span>
       </form>
       <ToastContainer />
     </div>
-  );
-};
+
+  </>
+  )};
 
 export default Login;

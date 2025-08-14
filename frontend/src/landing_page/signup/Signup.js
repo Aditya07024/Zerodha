@@ -66,46 +66,50 @@ const Signup = () => {
 
 
       </div>
-      <div className='row'>
+      <div className='row mt-5'>
         <div className='col ms-5'>
           <img src='media/images/account_open.svg' alt='Signup' style={{width:"80%"}}className='img-fluid mt-5 ms-5'></img>
         </div>
         <div className='col'>
           <h1>Signup now</h1>
           <div className="form_container">
-      <h2>Signup Account</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="col-10">
         <div>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email" className="form-label">Email</label>
           <input
             type="email"
             name="email"
             value={email}
             placeholder="Enter your email"
+            class="form-control"
             onChange={handleOnChange}
           />
+              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+
         </div>
         <div>
-          <label htmlFor="email">Username</label>
+          <label htmlFor="email" class="form-label">Username</label>
           <input
             type="text"
             name="username"
             value={username}
             placeholder="Enter your username"
+            class="form-control"
             onChange={handleOnChange}
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" class="form-label">Password</label>
           <input
             type="password"
             name="password"
             value={password}
             placeholder="Enter your password"
+            class="form-control"
             onChange={handleOnChange}
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" class="btn btn-primary m-3">Submit</button>
         <span>
           Already have an account? <Link to={"/login"}>Login</Link>
         </span>
